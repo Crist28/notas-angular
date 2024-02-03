@@ -1,0 +1,32 @@
+<app-headers />
+
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-sm-2" *ngFor="let nota of notas">
+      <div class="card mt-4" *ngIf="nota.archivada">
+        <div class="card-body">
+          <h5 class="card-title">{{ nota.titulo }}</h5>
+          <p class="card-text">{{ nota.contenido }}</p>
+          <button
+            class="btn btn-warning"
+            (click)="archivarDesarchivarNota(nota)"
+          >
+            Desarchivar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="total-notas">
+  Total de Notas: <span class="contador">{{ contadorNotas }}</span>
+</p>
+<p class="total-notas">
+  Total de Notas No Archivadas:
+  <span class="contador">{{ contadorNotasNoArchivadas }}</span>
+</p>
+<p class="total-notas">
+  Total de Notas Archivadas:
+  <span class="contador">{{ contadorNotasArchivadas }}</span>
+</p>

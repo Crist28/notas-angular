@@ -1,0 +1,62 @@
+<div class="registration">
+  <a [href]="['/']"><h2 class="active">Iniciar Sesion</h2></a>
+
+  <h2 class="nonactive">Registrarse</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombres">Nombres</label>
+      <input type="text" class="text" id="nombres" [(ngModel)]="nombres" name="nombres" />
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" class="text" id="apellidos" [(ngModel)]="apellidos" name="apellidos" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo</label>
+      <input type="email" class="text" id="email" [(ngModel)]="email" name="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="text" id="password" [(ngModel)]="password" name="password" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Telefono</label>
+      <input type="tel" class="text" id="telefono" [(ngModel)]="telefono" name="telefono" />
+    </div>
+
+    <div class="form-group">
+      <label for="genero">Genero</label>
+      <select class="text" id="genero" [(ngModel)]="genero" name="genero">
+        <option value="" disabled selected hidden style="color: #888">
+          Seleccionar
+        </option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha de Nacimiento</label>
+      <input type="date" class="text" id="fecha" [(ngModel)]="f_nacimiento" name="f_nacimiento" />
+    </div>
+
+    <div class="form-group">
+      <label for="identificacion">Identificacion</label>
+      <input
+        type="text"
+        class="text"
+        id="identificacion"
+        [(ngModel)]="dni" 
+        name="dni"
+      />
+    </div>
+
+    <button type="submit" class="signin">Crear Cuenta</button>
+
+    <hr />
+  </form>
+</div>

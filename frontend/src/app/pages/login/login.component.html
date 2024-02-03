@@ -1,0 +1,22 @@
+<div class="login">
+  <h2 class="active">Iniciar Sesion</h2>
+
+  <a [href]="['registro']"><h2 class="nonactive">Registrarse</h2></a>
+  <form #iniciarsesionForm="ngForm" (ngSubmit)="iniciarsesion(iniciarsesionForm)">
+    <input type="text" class="text" name="email" [(ngModel)]="user.email" />
+    <span>Correo</span>
+
+    <br />
+
+    <input type="password" class="text" [(ngModel)]="user.password" name="password" />
+    <span>Contraseña</span>
+    <br />
+
+    <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
+    <label for="checkbox-1-1">Ver Contraseña</label>
+
+    <button type="submit" class="signin">Iniciar Sesion</button>
+
+    <hr />
+  </form>
+</div>

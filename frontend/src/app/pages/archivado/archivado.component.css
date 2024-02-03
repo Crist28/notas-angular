@@ -1,0 +1,18 @@
+.total-notas-container {
+    position: fixed;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior según tu preferencia */
+    left: 10px; /* Ajusta la distancia desde el borde izquierdo según tu preferencia */
+    text-align: left;
+  }
+  
+  .total-notas {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: inline-block; /* Hace que las notas aparezcan en la misma línea */
+  }
+  
+  .contador {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #3498db; /* Puedes cambiar el color a tu preferencia */
+  }

@@ -1,0 +1,67 @@
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Agrega estos estilos a tu archivo de estilos (por ejemplo, styles.css) */
+
+/* Estilo general para las notas */
+.card {
+  background-color: #f5f5f5; /* Color de fondo similar al papel */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para el cuerpo de la nota */
+.card-body {
+  padding: 15px;
+}
+
+/* Estilo para el título de la nota */
+.card-title {
+  font-size: 1.5rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+}
+
+/* Estilo para el contenido de la nota */
+.card-text {
+  font-size: 1.2rem; /* Tamaño del texto */
+}
+
+/* Estilo para los botones (Editar, Eliminar) */
+.card-body button {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 5px 10px; /* Espaciado interno */
+  margin-right: 5px; /* Margen derecho entre botones */
+  cursor: pointer; /* Cursor de apuntar */
+}
+
+/* Pseudo-clase para resaltar el botón al pasar el ratón */
+.card-body button:hover {
+  background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}
+
+.total-notas-container {
+  position: fixed;
+  bottom: 10px; /* Ajusta la distancia desde la parte inferior según tu preferencia */
+  left: 10px; /* Ajusta la distancia desde el borde izquierdo según tu preferencia */
+  text-align: left;
+}
+
+.total-notas {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: inline-block; /* Hace que las notas aparezcan en la misma línea */
+}
+
+.contador {
+  font-weight: bold;
+  margin-left: 10px;
+  color: #3498db; /* Puedes cambiar el color a tu preferencia */
+}

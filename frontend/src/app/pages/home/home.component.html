@@ -1,0 +1,157 @@
+<app-headers />
+<!-- Agrega esto a tu componente HTML -->
+<button
+  type="button"
+  class="btn btn-primary fixed-button"
+  data-toggle="modal"
+  data-target="#crearNotaModal"
+>
+  +
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="crearNotaModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Nota</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Aquí puedes agregar tus opciones para crear notas -->
+        <form>
+          <div class="form-group">
+            <label for="titulo">Título</label>
+            <input
+              type="text"
+              class="form-control"
+              id="titulo"
+              placeholder="Ingrese el título"
+              [(ngModel)]="titulo"
+              name="titulo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contenido">Contenido</label>
+            <textarea
+              class="form-control"
+              id="contenido"
+              rows="3"
+              placeholder="Ingrese el contenido"
+              [(ngModel)]="contenido"
+              name="contenido"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="crearNota()">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para editar nota -->
+<div
+  class="modal fade"
+  id="editarNotaModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="editarNotaLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarNotaLabel">Editar Nota</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Campos para editar la nota -->
+        <form>
+          <div class="form-group">
+            <label for="tituloEdit">Título</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tituloEdit"
+              placeholder="Ingrese el título"
+              [(ngModel)]="notaEdit.titulo"
+              name="tituloEdit"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contenidoEdit">Contenido</label>
+            <textarea
+              class="form-control"
+              id="contenidoEdit"
+              rows="3"
+              placeholder="Ingrese el contenido"
+              [(ngModel)]="notaEdit.contenido"
+              name="contenidoEdit"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="actualizarNota()">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-sm-2" *ngFor="let nota of notas">
+      <div class="card mt-4" *ngIf="!nota.archivada">
+        <div class="card-body">
+          <h5 class="card-title">{{ nota.titulo }}</h5>
+          <p class="card-text">{{ nota.contenido }}</p>
+          <button
+            type="button"
+            data-toggle="modal"
+            data-target="#editarNotaModal"
+            (click)="abrirEditarNotaModal(nota)"
+          >Editar</button>
+          <button (click)="eliminarNota(nota.id)" >Eliminar</button>
+          <button (click)="archivarDesarchivarNota(nota)">Archivar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="total-notas">Total de Notas: <span class="contador">{{ contadorNotas }}</span></p>
+<p class="total-notas">Total de Notas No Archivadas: <span class="contador">{{ contadorNotasNoArchivadas }}</span></p>
+<p class="total-notas">Total de Notas Archivadas: <span class="contador">{{ contadorNotasArchivadas }}</span></p>
